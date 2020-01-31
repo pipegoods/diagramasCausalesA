@@ -24,11 +24,14 @@
   </div>
   <ng-template #templateName>
     <div *ngFor="let item of listaVariables">
-      <div *ngFor="let i of matrizA['item']">
-        {{i}}
+      {{item}}: <br>
+      <div *ngFor="let i of matrizA[item]">
+        {{i.var }} --- <button (click)="cambiarIncidencia(item,i.var,i.inc)">{{i.inc}}</button>
       </div>
+      <br><br>
+
     </div>
-    
+    <button >Generar diagrama</button>
   </ng-template>
 </ng-template>
 

@@ -64,13 +64,31 @@ export class AppComponent {
       this.listaVariables.forEach(e => {
         this.matrizA[element].push({
           var: e,
-          inc: "+"
+          inc: 'ø'
         })
       });
     });
     console.log(this.matrizA);
     
     this.crearVariables = false;
+  }
+
+  cambiarIncidencia(varI, varF, i) {
+    this.matrizA[varI].forEach(element => {
+      if (element.var == varF) {
+        switch (element.inc) {
+          case '+':
+            element.inc = '-';
+            break;
+          case '-':
+            element.inc = 'ø';
+            break;
+          case 'ø':
+            element.inc = '+';
+            break;    
+        }
+      }
+    });
   }
 
 
